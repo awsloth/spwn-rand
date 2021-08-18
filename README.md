@@ -15,3 +15,6 @@ num = random.choice([0, 1, 2, 3, 4])
 // Shuffles an array
 new_array = random.shuffle([0, 1, 2, 3, 4])
 ```
+
+# Version
+Made with SPWN v0.0.6
