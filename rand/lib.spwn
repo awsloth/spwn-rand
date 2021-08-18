@@ -1,0 +1,27 @@
+let seed = $.time()
+a = 1664525
+c = 1013904223
+mod = 2 ^ 32
+
+rand_gen = (start, end){
+    seed = (a*seed + c) % mod
+    return seed % (end-start+1) + start
+}
+
+rand_choice = (array){
+    return array[rand_gen(0, array.length-1)]
+}
+
+rand_shuffle = (array){
+    let array = array
+    for i in array.length..1 {
+        array[rand_gen(0, i)] <=> array[i]
+    }
+    return array
+}
+
+return {
+    randint:rand_gen,
+    shuffle:rand_shuffle,
+    choice:rand_choice
+    }
